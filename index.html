@@ -378,6 +378,39 @@
             </div>
           </div>
 
+          <!-- NUEVO PASO 5: Datos del Cliente -->
+          <div class="space-y-4 pt-4 border-t border-pancake-100">
+            <h3 class="text-sm font-bold text-chocolate-800 flex items-center gap-2">
+              <i data-lucide="user-circle" class="w-4 h-4 text-pancake-600"></i>
+              5. Detalles de tu Pedido:
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Campo Nombre -->
+              <div class="space-y-1.5">
+                <label for="customer-name" class="block text-xs font-semibold text-gray-700">Tu Nombre *</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
+                  </div>
+                  <input type="text" id="customer-name" placeholder="Ej. Carlos Pérez" 
+                    class="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pancake-400 focus:border-pancake-400 transition-shadow">
+                </div>
+              </div>
+
+              <!-- Campo Instrucciones -->
+              <div class="space-y-1.5">
+                <label for="customer-note" class="block text-xs font-semibold text-gray-700">Comentario o Instrucción (Opcional)</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i data-lucide="message-square" class="w-4 h-4 text-gray-400"></i>
+                  </div>
+                  <input type="text" id="customer-note" placeholder="Ej. Sin tanta miel, o pagaré con billete de Q50" 
+                    class="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pancake-400 focus:border-pancake-400 transition-shadow">
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Order Summary Box -->
           <div class="bg-pancake-50/80 rounded-2xl p-5 border border-pancake-200 space-y-4">
             <h4 class="font-bold text-chocolate-800 text-base flex items-center gap-2">
@@ -419,30 +452,34 @@
     <section class="bg-amber-500/10 rounded-3xl p-6 md:p-8 border border-pancake-200 text-center space-y-4">
       <h3 class="text-xl font-bold text-chocolate-800">¿Tienes dudas sobre los ingredientes disponibles?</h3>
       <p class="text-xs md:text-sm text-gray-700 max-w-xl mx-auto">
-        Contamos con ingredientes frescos del día: Fresas, Banano, Uva, Melocoton, Chispas de Chocolate, OREO, Nutella, Dulce de Leche, Miel de Maple y mucho más.
+        Contamos con ingredientes frescos del día: Fresas, Banano, Uva, Melocoton, Chispas de Chocolate, Oreo, Chocolate hershey's, Dulce de Leche, Miel, Botonetas y mucho más.
       </p>
     </section>
 
   </main>
 
   <!-- Footer -->
+  <!-- Footer -->
   <footer class="bg-chocolate-800 text-pancake-100 py-8 px-4 mt-12">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-pancake-500 text-white flex items-center justify-center font-bold text-lg">
-          🥞
+        
+        <!-- Logo en el Footer -->
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-pancake-400 bg-white flex-shrink-0 flex items-center justify-center shadow-md">
+          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
+
         <div>
           <h4 class="font-bold text-white text-base">Dulce Momento</h4>
           <p class="text-xs text-pancake-300">Guatemala • Tu Dulce Momento</p>
         </div>
       </div>
+      
       <p class="text-xs text-pancake-300">
         © 2026 Dulce Momento. Todos los derechos reservados.
       </p>
     </div>
   </footer>
-
   <!-- Notification Toast -->
   <div id="toast" class="fixed bottom-4 right-4 bg-chocolate-800 text-white text-xs px-4 py-3 rounded-xl shadow-2xl transition-all transform translate-y-20 opacity-0 z-50 flex items-center gap-2">
     <i data-lucide="info" class="w-4 h-4 text-pancake-400"></i>

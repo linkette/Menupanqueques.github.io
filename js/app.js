@@ -1,7 +1,7 @@
 // Configuración de Ingredientes
 const FRUITS = ['Fresa 🍓', 'Banano 🍌', 'Uva 🍇', 'Melocoton 🍑'];
-const TOPPINGS = ['Chispas de Chocolate 🍫', 'Galleta OREO 🍪', 'Chispas de Chocolate 🌈', 'Marshmallows 🍥'];
-const SAUCES = ['Nutella 🌰', 'Leche Condensada 🥛', 'Miel de Maple 🍁', 'Miel 🍯'];
+const TOPPINGS = ['Chispas de Chocolate 🍫', 'Galleta Oreo 🍪', 'Botonetas 🌈', 'Marshmallows 🍥'];
+const SAUCES = ['hershey s 🌰', 'Leche Condensada 🥛', 'Miel de Maple 🍁', 'Miel 🍯'];
 
 // Estado del pedido
 let currentCategory = {
@@ -122,18 +122,41 @@ window.scrollToBuilder = function() {
   document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Envío a WhatsApp
+// Envío a WhatsApp con Nombre y Comentario integrado
 window.sendOrderWhatsApp = function() {
-  const message = 
+  // Capturar los inputs de nombre y notas
+  const customerNameInput = document.getElementById('customer-name').value.trim();
+  const customerNoteInput = document.getElementById('customer-note').value.trim();
+
+  // Validación: Obligar a ingresar el nombre
+  if (customerNameInput === "") {
+    showToast("⚠️ Por favor, ingresa tu nombre antes de enviar el pedido.");
+    document.getElementById('customer-name').focus();
+    return;
+  }
+
+  // Estructura del mensaje para WhatsApp
+  let message = 
     `¡Hola! 👋 Quisiera hacer un pedido de Mini Pancakes 🥞\n\n` +
+    `👤 *Cliente:* ${customerNameInput}\n` +
     `*Categoría:* ${currentCategory.name} (Q${currentCategory.price}.00)\n` +
     `*Cantidad:* ${currentCategory.pancakes} mini pancakes\n\n` +
-    `🍓 *Frutas:* ${selectedFruits.length ? selectedFruits.join(', ') : 'Pendiente'}\n` +
-    `🍪 *Toppings:* ${selectedToppings.length ? selectedToppings.join(', ') : 'Pendiente'}\n` +
-    `🍯 *Salsas:* ${selectedSauces.length ? selectedSauces.join(', ') : 'Pendiente'}\n` +
-    (currentCategory.stickers > 0 ? `🎁 *Incluye:* 2 Stickers sorpresa\n` : '') +
-    `\n*Total:* Q${currentCategory.price}.00\n\n` +
-    `¡Quedo a la espera de confirmación! ✨`;
+    `🍓 *Frutas:* ${selectedFruits.length ? selectedFruits.join(', ') : 'Ninguna'}\n` +
+    `🍪 *Toppings:* ${selectedToppings.length ? selectedToppings.join(', ') : 'Ninguno'}\n` +
+    `🍯 *Salsas:* ${selectedSauces.length ? selectedSauces.join(', ') : 'Ninguna'}\n`;
+
+  // Agregar comentario personalizado solo si el usuario escribió algo
+  if (customerNoteInput !== "") {
+    message += `📝 *Comentario:* ${customerNoteInput}\n`;
+  }
+
+  // Agregar stickers si la promoción aplica
+  if (currentCategory.stickers > 0) {
+    message += `🎁 *Incluye:* 2 Stickers sorpresa\n`;
+  }
+
+  message += `\n*Total a pagar:* Q${currentCategory.price}.00\n\n` +
+             `¡Quedo a la espera de confirmación! ✨`;
 
   const encodedUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
   window.open(encodedUrl, '_blank');
