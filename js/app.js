@@ -1,7 +1,7 @@
 // Configuración de Ingredientes
 const FRUITS = ['Fresa 🍓', 'Banano 🍌', 'Uva 🍇', 'Melocoton 🍑'];
-const TOPPINGS = ['Chispas de Chocolate 🍫', 'Galleta Oreo 🍪', 'Botonetas 🌈', 'Marshmallows 🍥'];
-const SAUCES = ['hershey s 🌰', 'Leche Condensada 🥛', 'Miel de Maple 🍁', 'Miel 🍯'];
+const TOPPINGS = ['Chispas de Colores 🍫', 'Galleta Oreo 🍪', 'Botonetas 🌈', 'Marshmallows 🍥'];
+const SAUCES = ['Chocolate Hersheys 🌰', 'Leche Condensada 🥛', 'Miel de Maple 🍁', 'Miel 🍯'];
 
 // Estado del pedido
 let currentCategory = {
