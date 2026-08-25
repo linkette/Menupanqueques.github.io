@@ -158,6 +158,7 @@ window.sendOrderWhatsApp = function() {
   message += `\n*Total a pagar:* Q${currentCategory.price}.00\n\n` +
              `¡Quedo a la espera de confirmación! ✨`;
 
-  const encodedUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+  // 🔹 AQUÍ ES DONDE AGREGAS EL NÚMERO (Reemplaza los ceros por tu número real con 502 adelante)
+  const encodedUrl = `https://wa.me/50244936428?text=${encodeURIComponent(message)}`;
   window.open(encodedUrl, '_blank');
 }
