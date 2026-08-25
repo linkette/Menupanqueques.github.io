@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Mini Pancakes 🥞</title>
+  <title>Menú Dulce Momento 🥞</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
@@ -12,78 +12,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            pancake: {
-              50: '#FFFBEB',
-              100: '#FEF3C7',
-              200: '#FDE68A',
-              300: '#FCD34D',
-              400: '#FBBF24',
-              500: '#F59E0B',
-              600: '#D97706',
-              700: '#B45309',
-              800: '#78350F',
-              900: '#451A03',
-            },
-            berry: {
-              500: '#E11D48',
-              600: '#BE123C',
-            },
-            chocolate: {
-              600: '#522A16',
-              800: '#341B0E',
-            }
-          },
-          fontFamily: {
-            display: ['Fredoka', 'sans-serif'],
-            body: ['Plus Jakarta Sans', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #FFFBF5;
-    }
-    h1, h2, h3, .font-display {
-      font-family: 'Fredoka', sans-serif;
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #FEF3C7;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #F59E0B;
-      border-radius: 9999px;
-    }
-  </style>
+  <!-- Estilos Externos -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config/tailwind-config.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="text-chocolate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-pancake-200">
 
-  <!-- Header / Navbar -->
-  <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-pancake-100 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <div class="w-10 h-10 rounded-full bg-pancake-500 flex items-center justify-center text-white shadow-md shadow-pancake-500/30">
-          <i data-lucide="utensils-crossed" class="w-5 h-5"></i>
+  <!-- Header / Navbar con logo expandido en altura -->
+  <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-pancake-100 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between">
+      
+      <!-- Bloque de Logo y Textos -->
+      <div class="flex items-center gap-4">
+        <!-- Contenedor del logo grande que abarca todo el alto del navbar -->
+        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-xl shadow-pancake-500/30 border-4 border-white bg-white flex-shrink-0 flex items-center justify-center -my-3 z-10">
+          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo" style="width: 100%; height: 100%; object-fit: cover; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
         </div>
-        <div>
-          <h1 class="text-xl font-bold text-chocolate-800 leading-none">Sweet Mini Pancakes</h1>
-          <p class="text-xs font-semibold text-pancake-600">¡Recién hechos con amor! 🥞✨</p>
+        
+        <!-- Textos organizados verticalmente -->
+        <div class="flex flex-col justify-center">
+          <h1 class="text-xl md:text-2xl font-extrabold text-chocolate-800 leading-tight tracking-tight">Dulce Momento</h1>
+          <p class="text-xs md:text-sm font-semibold text-pancake-600 leading-none mt-1.5">¡Recién hechos con amor! 🥞✨</p>
         </div>
       </div>
-      <button onclick="scrollToBuilder()" class="bg-berry-500 hover:bg-berry-600 text-white font-semibold text-sm px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all flex items-center gap-1.5">
+
+      <!-- Botón de acción -->
+      <button onclick="scrollToBuilder()" class="bg-berry-500 hover:bg-berry-600 text-white font-bold text-xs md:text-sm px-5 py-3 rounded-full shadow-lg shadow-berry-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2 animate-pulse hover:animate-none">
         <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-        <span>Armar Pedido</span>
+        <span class="hidden md:inline">Armar Pedido</span>
+        <span class="md:hidden">Pedir</span>
       </button>
+
     </div>
   </header>
 
@@ -125,19 +91,20 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: Individual -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group">
-          <div class="space-y-4">
-            <div class="flex justify-between items-start">
+        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+          <div class="space-y-4 pt-3">
+            <!-- Cabecera centrada -->
+            <div class="flex flex-col items-center justify-center text-center space-y-1">
               <span class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
                 Personal
               </span>
-              <div class="text-right">
-                <span class="text-xs text-gray-500 block">Precio</span>
-                <span class="text-2xl font-bold text-chocolate-800 font-display">Q20.00</span>
+              <div class="pt-1">
+                <span class="text-[10px] text-gray-400 block leading-none">Precio</span>
+                <span class="text-3xl font-bold text-chocolate-800 font-display">Q20.00</span>
               </div>
             </div>
 
-            <div>
+            <div class="text-center">
               <h3 class="text-xl font-bold text-chocolate-800">Individual</h3>
               <p class="text-xs text-gray-500 mt-0.5">Perfecto para una merienda rápida</p>
             </div>
@@ -146,7 +113,7 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">12</span>
+                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">12</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -170,24 +137,27 @@
           </button>
         </div>
 
-        <!-- Card 2: Especial (Destacado) -->
-        <div class="bg-gradient-to-b from-white to-pancake-50/50 rounded-3xl p-6 border-2 border-pancake-400 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pancake-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-            <i data-lucide="sparkles" class="w-3 h-3"></i> ¡MÁS POPULAR!
+       <!-- Card 2: Especial (Destacado) -->
+        <div class="bg-gradient-to-b from-white to-pancake-50/50 rounded-3xl p-6 border-2 border-pancake-400 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+          
+          <!-- Badge superior con espacio garantizado arriba -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-pancake-500 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1 z-20 whitespace-nowrap">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> ¡MÁS POPULAR!
           </div>
 
-          <div class="space-y-4 pt-2">
-            <div class="flex justify-between items-start">
+          <div class="space-y-4 pt-3">
+            <!-- Cabecera reorganizada: Centrada (Recomendado arriba, Precio abajo) -->
+            <div class="flex flex-col items-center justify-center text-center space-y-1">
               <span class="text-xs font-bold uppercase tracking-wider text-pancake-700 bg-pancake-100 px-3 py-1 rounded-full border border-pancake-300">
                 Recomendado
               </span>
-              <div class="text-right">
-                <span class="text-xs text-gray-500 block">Precio</span>
-                <span class="text-2xl font-bold text-pancake-700 font-display">Q25.00</span>
+              <div class="pt-1">
+                <span class="text-[10px] text-gray-400 block leading-none">Precio</span>
+                <span class="text-3xl font-bold text-pancake-700 font-display">Q25.00</span>
               </div>
             </div>
 
-            <div>
+            <div class="text-center">
               <h3 class="text-xl font-bold text-chocolate-800">Especial</h3>
               <p class="text-xs text-gray-500 mt-0.5">El equilibrio perfecto de sabor</p>
             </div>
@@ -196,7 +166,7 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-semibold text-chocolate-800">
-                <span class="w-6 h-6 rounded-full bg-pancake-500 text-white flex items-center justify-center text-xs font-bold">15</span>
+                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-pancake-500 text-white flex items-center justify-center text-xs font-bold">15</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-700">
@@ -221,19 +191,19 @@
         </div>
 
         <!-- Card 3: Grande -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group">
-          <div class="space-y-4">
-            <div class="flex justify-between items-start">
+        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+          <div class="space-y-4 pt-3">
+            <div class="flex flex-col items-center justify-center text-center space-y-1">
               <span class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
                 Para Compartir
               </span>
-              <div class="text-right">
-                <span class="text-xs text-gray-500 block">Precio</span>
-                <span class="text-2xl font-bold text-chocolate-800 font-display">Q30.00</span>
+              <div class="pt-1">
+                <span class="text-[10px] text-gray-400 block leading-none">Precio</span>
+                <span class="text-3xl font-bold text-chocolate-800 font-display">Q30.00</span>
               </div>
             </div>
 
-            <div>
+            <div class="text-center">
               <h3 class="text-xl font-bold text-chocolate-800">Grande</h3>
               <p class="text-xs text-gray-500 mt-0.5">Para amantes del dulce</p>
             </div>
@@ -242,7 +212,7 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">17</span>
+                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">17</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -267,19 +237,19 @@
         </div>
 
         <!-- Card 4: Personalizado / Dúo -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group">
-          <div class="space-y-4">
-            <div class="flex justify-between items-start">
+        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+          <div class="space-y-4 pt-3">
+            <div class="flex flex-col items-center justify-center text-center space-y-1">
               <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
                 Dúo VIP
               </span>
-              <div class="text-right">
-                <span class="text-xs text-gray-500 block">Precio</span>
-                <span class="text-2xl font-bold text-chocolate-800 font-display">Q45.00</span>
+              <div class="pt-1">
+                <span class="text-[10px] text-gray-400 block leading-none">Precio</span>
+                <span class="text-3xl font-bold text-chocolate-800 font-display">Q45.00</span>
               </div>
             </div>
 
-            <div>
+            <div class="text-center">
               <h3 class="text-xl font-bold text-chocolate-800">Personalizado / Dúo</h3>
               <p class="text-xs text-gray-500 mt-0.5">La experiencia completa + stickers</p>
             </div>
@@ -288,7 +258,7 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">20</span>
+                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">20</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -325,9 +295,9 @@
 
         <div class="text-center space-y-2">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pancake-100 text-pancake-700 text-xs font-bold uppercase">
-            <i data-lucide="wand2" class="w-3.5 h-3.5"></i> Diseñador Interactivo
+            <i data-lucide="wand2" class="w-3.5 h-3.5"></i> Diseña tu pedido
           </span>
-          <h2 class="text-3xl font-bold text-chocolate-800">Arma Tu Caja de Mini Pancakes</h2>
+          <h2 class="text-3xl font-bold text-chocolate-800">Arma Tu Pedido de Mini Pancakes</h2>
           <p class="text-sm text-gray-600">Escoge una categoría y personaliza cada ingrediente a tu gusto</p>
         </div>
 
@@ -449,7 +419,7 @@
     <section class="bg-amber-500/10 rounded-3xl p-6 md:p-8 border border-pancake-200 text-center space-y-4">
       <h3 class="text-xl font-bold text-chocolate-800">¿Tienes dudas sobre los ingredientes disponibles?</h3>
       <p class="text-xs md:text-sm text-gray-700 max-w-xl mx-auto">
-        Contamos con ingredientes frescos del día: Fresas, Banano, Chispas de Chocolate, OREO, Nutella, Dulce de Leche, Miel de Maple y mucho más.
+        Contamos con ingredientes frescos del día: Fresas, Banano, Uva, Melocoton, Chispas de Chocolate, OREO, Nutella, Dulce de Leche, Miel de Maple y mucho más.
       </p>
     </section>
 
@@ -463,12 +433,12 @@
           🥞
         </div>
         <div>
-          <h4 class="font-bold text-white text-base">Sweet Mini Pancakes</h4>
-          <p class="text-xs text-pancake-300">Guatemala • Tu rincón dulce favorito</p>
+          <h4 class="font-bold text-white text-base">Dulce Momento</h4>
+          <p class="text-xs text-pancake-300">Guatemala • Tu Dulce Momento</p>
         </div>
       </div>
       <p class="text-xs text-pancake-300">
-        © 2026 Sweet Mini Pancakes. Todos los derechos reservados.
+        © 2026 Dulce Momento. Todos los derechos reservados.
       </p>
     </div>
   </footer>
@@ -479,199 +449,7 @@
     <span id="toast-message">Mensaje de prueba</span>
   </div>
 
-  <script>
-    // Ingredients Config
-    const FRUITS = ['Fresa 🍓', 'Banano 🍌', 'Arándanos 🫐', 'Kiwi 🥝'];
-    const TOPPINGS = ['Chispas de Chocolate 🍫', 'Galleta OREO 🍪', 'Almendras 🥜', 'Granillo de Colores 🌈', 'Marshmallows 🍥', 'Coco Rallado 🥥'];
-    const SAUCES = ['Nutella 🌰', 'Dulce de Leche 🍯', 'Leche Condensada 🥛', 'Miel de Maple 🍁', 'Mermelada de Fresa 🍓'];
-
-    // State
-    let currentCategory = {
-      name: 'Individual',
-      price: 20,
-      pancakes: 12,
-      maxFruits: 1,
-      maxToppings: 1,
-      maxSauces: 1,
-      stickers: 0
-    };
-
-    let selectedFruits = [];
-    let selectedToppings = [];
-    let selectedSauces = [];
-
-    // Initialize UI
-    window.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
-      selectCategory('Individual', 20, 12, 1, 1, 1, 0);
-    });
-
-    function selectCategory(name, price, pancakes, maxFruits, maxToppings, maxSauces, stickers) {
-      currentCategory = { name, price, pancakes, maxFruits, maxToppings, maxSauces, stickers };
-      
-      // Reset selections
-      selectedFruits = [];
-      selectedToppings = [];
-      selectedSauces = [];
-
-      // Update Category Buttons UI
-      document.querySelectorAll('.cat-select-btn').forEach(btn => {
-        btn.classList.remove('border-pancake-500', 'bg-pancake-50', 'ring-2', 'ring-pancake-500');
-        btn.classList.add('bg-white', 'border-gray-200');
-      });
-
-      const activeBtn = document.getElementById(`cat-btn-${name}`);
-      if (activeBtn) {
-        activeBtn.classList.add('border-pancake-500', 'bg-pancake-50', 'ring-2', 'ring-pancake-500');
-      }
-
-      renderOptions();
-      updateSummary();
-    }
-
-    function renderOptions() {
-      // Render Fruits Grid
-      const fruitsContainer = document.getElementById('fruits-grid');
-      fruitsContainer.innerHTML = FRUITS.map(fruit => {
-        const isSelected = selectedFruits.includes(fruit);
-        return `
-          <button type="button" onclick="toggleOption('fruit', '${fruit}')" 
-            class="p-2.5 rounded-xl border text-xs font-semibold transition-all text-left flex items-center justify-between ${
-              isSelected 
-                ? 'bg-berry-50 border-berry-500 text-berry-600 ring-1 ring-berry-500' 
-                : 'bg-white border-gray-200 text-gray-700 hover:border-pancake-300'
-            }">
-            <span>${fruit}</span>
-            ${isSelected ? '<i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-berry-500"></i>' : ''}
-          </button>
-        `;
-      }).join('');
-
-      // Render Toppings Grid
-      const toppingsContainer = document.getElementById('toppings-grid');
-      toppingsContainer.innerHTML = TOPPINGS.map(topping => {
-        const isSelected = selectedToppings.includes(topping);
-        return `
-          <button type="button" onclick="toggleOption('topping', '${topping}')" 
-            class="p-2.5 rounded-xl border text-xs font-semibold transition-all text-left flex items-center justify-between ${
-              isSelected 
-                ? 'bg-pancake-100 border-pancake-500 text-pancake-800 ring-1 ring-pancake-500' 
-                : 'bg-white border-gray-200 text-gray-700 hover:border-pancake-300'
-            }">
-            <span>${topping}</span>
-            ${isSelected ? '<i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-pancake-600"></i>' : ''}
-          </button>
-        `;
-      }).join('');
-
-      // Render Sauces Grid
-      const saucesContainer = document.getElementById('sauces-grid');
-      saucesContainer.innerHTML = SAUCES.map(sauce => {
-        const isSelected = selectedSauces.includes(sauce);
-        return `
-          <button type="button" onclick="toggleOption('sauce', '${sauce}')" 
-            class="p-2.5 rounded-xl border text-xs font-semibold transition-all text-left flex items-center justify-between ${
-              isSelected 
-                ? 'bg-amber-100 border-amber-500 text-amber-900 ring-1 ring-amber-500' 
-                : 'bg-white border-gray-200 text-gray-700 hover:border-pancake-300'
-            }">
-            <span>${sauce}</span>
-            ${isSelected ? '<i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600"></i>' : ''}
-          </button>
-        `;
-      }).join('');
-
-      // Update Badges
-      document.getElementById('fruit-count-badge').textContent = `${selectedFruits.length} / ${currentCategory.maxFruits} elegidas`;
-      document.getElementById('topping-count-badge').textContent = `${selectedToppings.length} / ${currentCategory.maxToppings} elegidos`;
-      document.getElementById('sauce-count-badge').textContent = `${selectedSauces.length} / ${currentCategory.maxSauces} elegidas`;
-
-      lucide.createIcons();
-    }
-
-    function toggleOption(type, item) {
-      if (type === 'fruit') {
-        if (selectedFruits.includes(item)) {
-          selectedFruits = selectedFruits.filter(i => i !== item);
-        } else {
-          if (selectedFruits.length < currentCategory.maxFruits) {
-            selectedFruits.push(item);
-          } else {
-            showToast(`Solo puedes elegir ${currentCategory.maxFruits} fruta(s) para este tamaño.`);
-          }
-        }
-      } else if (type === 'topping') {
-        if (selectedToppings.includes(item)) {
-          selectedToppings = selectedToppings.filter(i => i !== item);
-        } else {
-          if (selectedToppings.length < currentCategory.maxToppings) {
-            selectedToppings.push(item);
-          } else {
-            showToast(`Solo puedes elegir ${currentCategory.maxToppings} topping(s) para este tamaño.`);
-          }
-        }
-      } else if (type === 'sauce') {
-        if (selectedSauces.includes(item)) {
-          selectedSauces = selectedSauces.filter(i => i !== item);
-        } else {
-          if (selectedSauces.length < currentCategory.maxSauces) {
-            selectedSauces.push(item);
-          } else {
-            showToast(`Solo puedes elegir ${currentCategory.maxSauces} salsa(s) para este tamaño.`);
-          }
-        }
-      }
-
-      renderOptions();
-      updateSummary();
-    }
-
-    function updateSummary() {
-      document.getElementById('summary-category').textContent = `Categoría: ${currentCategory.name}`;
-      document.getElementById('summary-price').textContent = `Q${currentCategory.price}.00`;
-      document.getElementById('summary-details').textContent = `Incluye ${currentCategory.pancakes} mini pancakes`;
-
-      document.getElementById('summary-fruits').textContent = selectedFruits.length ? selectedFruits.join(', ') : 'Ninguna';
-      document.getElementById('summary-toppings').textContent = selectedToppings.length ? selectedToppings.join(', ') : 'Ninguno';
-      document.getElementById('summary-sauces').textContent = selectedSauces.length ? selectedSauces.join(', ') : 'Ninguna';
-
-      const stickersRow = document.getElementById('summary-stickers-row');
-      if (currentCategory.stickers > 0) {
-        stickersRow.classList.remove('hidden');
-      } else {
-        stickersRow.classList.add('hidden');
-      }
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      document.getElementById('toast-message').textContent = message;
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      
-      setTimeout(() => {
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 3000);
-    }
-
-    function scrollToBuilder() {
-      document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function sendOrderWhatsApp() {
-      const message = 
-        `¡Hola! 👋 Quisiera hacer un pedido de Mini Pancakes 🥞\n\n` +
-        `*Categoría:* ${currentCategory.name} (Q${currentCategory.price}.00)\n` +
-        `*Cantidad:* ${currentCategory.pancakes} mini pancakes\n\n` +
-        `🍓 *Frutas:* ${selectedFruits.length ? selectedFruits.join(', ') : 'Pendiente'}\n` +
-        `🍪 *Toppings:* ${selectedToppings.length ? selectedToppings.join(', ') : 'Pendiente'}\n` +
-        `🍯 *Salsas:* ${selectedSauces.length ? selectedSauces.join(', ') : 'Pendiente'}\n` +
-        (currentCategory.stickers > 0 ? `🎁 *Incluye:* 2 Stickers sorpresa\n` : '') +
-        `\n*Total:* Q${currentCategory.price}.00\n\n` +
-        `¡Quedo a la espera de confirmación! ✨`;
-
-      const encodedUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-      window.open(encodedUrl, '_blank');
-    }
-  </script>
+  <!-- Lógica Externa -->
+  <script src="js/app.js"></script>
 </body>
 </html>
