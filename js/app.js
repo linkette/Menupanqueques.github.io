@@ -96,18 +96,48 @@ window.toggleOption = function(type, item) {
   updateSummary();
 }
 
-// Resumen del pedido
+// Resumen del pedido (Actualizado con Costo de Envío en Pantalla)
 function updateSummary() {
-  document.getElementById('summary-category').textContent = `Categoría: ${currentCategory.name}`;
-  document.getElementById('summary-price').textContent = `Q${currentCategory.price}.00`;
-  document.getElementById('summary-details').textContent = `Incluye ${currentCategory.pancakes} mini pancakes`;
+  const setTxt = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
 
-  document.getElementById('summary-fruits').textContent = selectedFruits.length ? selectedFruits.join(', ') : 'Ninguna';
-  document.getElementById('summary-toppings').textContent = selectedToppings.length ? selectedToppings.join(', ') : 'Ninguno';
-  document.getElementById('summary-sauces').textContent = selectedSauces.length ? selectedSauces.join(', ') : 'Ninguna';
+  // 1. Actualizar categoría y precio base del producto
+  setTxt('summary-category', `Categoría: ${currentCategory.name}`);
+  setTxt('summary-details', `Incluye ${currentCategory.pancakes} mini pancakes`);
 
+  // 2. Actualizar ingredientes
+  setTxt('summary-fruits', selectedFruits.length ? selectedFruits.join(', ') : 'Ninguna');
+  setTxt('summary-toppings', selectedToppings.length ? selectedToppings.join(', ') : 'Ninguno');
+  setTxt('summary-sauces', selectedSauces.length ? selectedSauces.join(', ') : 'Ninguna');
+
+  // 3. Stickers promocionales
   const stickersRow = document.getElementById('summary-stickers-row');
-  currentCategory.stickers > 0 ? stickersRow.classList.remove('hidden') : stickersRow.classList.add('hidden');
+  if (stickersRow) {
+    currentCategory.stickers > 0 ? stickersRow.classList.remove('hidden') : stickersRow.classList.add('hidden');
+  }
+
+  // 4. Capturar el costo de envío seleccionado
+  const deliverySelect = document.getElementById('delivery-zone');
+  let deliveryCost = 0;
+  let deliveryName = 'Pasar a Recoger';
+  
+  if (deliverySelect) {
+    const parts = deliverySelect.value.split('|');
+    deliveryCost = parseInt(parts[0]);
+    deliveryName = parts[1];
+  }
+
+  // Mostrar el nombre y costo del envío en el resumen
+  setTxt('summary-delivery-name', deliveryName);
+  setTxt('summary-delivery-cost', `Q${deliveryCost}.00`);
+
+  // 5. Calcular los totales (Precio del producto en pantalla y Total final)
+  setTxt('summary-price', `Q${currentCategory.price}.00`);
+  
+  const totalAPagar = currentCategory.price + deliveryCost;
+  setTxt('summary-total', `Q${totalAPagar}.00`);
 }
 
 // Interfaz de Usuario
@@ -122,11 +152,16 @@ window.scrollToBuilder = function() {
   document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Envío a WhatsApp con Nombre y Comentario integrado
+// Envío a WhatsApp con Nombre, Comentario y Envío integrado
 window.sendOrderWhatsApp = function() {
-  // Capturar los inputs de nombre y notas
   const customerNameInput = document.getElementById('customer-name').value.trim();
   const customerNoteInput = document.getElementById('customer-note').value.trim();
+  
+  // Capturar la entrega (separa el precio del nombre de la zona)
+  const deliverySelect = document.getElementById('delivery-zone');
+  const deliveryData = deliverySelect ? deliverySelect.value.split('|') : ['0', 'Pasar a Recoger'];
+  const deliveryCost = parseInt(deliveryData[0]);
+  const deliveryZone = deliveryData[1];
 
   // Validación: Obligar a ingresar el nombre
   if (customerNameInput === "") {
@@ -135,30 +170,36 @@ window.sendOrderWhatsApp = function() {
     return;
   }
 
+  // Limpiar emojis de los ingredientes para el mensaje
+  const clean = (arr) => arr.map(item => item.split(' ').slice(0, -1).join(' '));
+
+  // Calcular el total real
+  const totalAPagar = currentCategory.price + deliveryCost;
+
   // Estructura del mensaje para WhatsApp
   let message = 
-    `¡Hola! 👋 Quisiera hacer un pedido de Mini Pancakes 🥞\n\n` +
+    `¡Hola! 👋 Quisiera hacer un pedido en Dulce Momento 🥞\n\n` +
     `👤 *Cliente:* ${customerNameInput}\n` +
-    `*Categoría:* ${currentCategory.name} (Q${currentCategory.price}.00)\n` +
-    `*Cantidad:* ${currentCategory.pancakes} mini pancakes\n\n` +
-    `🍓 *Frutas:* ${selectedFruits.length ? selectedFruits.join(', ') : 'Ninguna'}\n` +
-    `🍪 *Toppings:* ${selectedToppings.length ? selectedToppings.join(', ') : 'Ninguno'}\n` +
-    `🍯 *Salsas:* ${selectedSauces.length ? selectedSauces.join(', ') : 'Ninguna'}\n`;
+    `📦 *Categoría:* ${currentCategory.name} (Q${currentCategory.price}.00)\n` +
+    `🥞 *Cantidad:* ${currentCategory.pancakes} mini pancakes\n\n` +
+    `🍓 *Frutas:* ${selectedFruits.length ? clean(selectedFruits).join(', ') : 'Ninguna'}\n` +
+    `🍪 *Toppings:* ${selectedToppings.length ? clean(selectedToppings).join(', ') : 'Ninguno'}\n` +
+    `🍯 *Salsas:* ${selectedSauces.length ? clean(selectedSauces).join(', ') : 'Ninguna'}\n\n` +
+    `🛵 *Entrega:* ${deliveryZone} (Q${deliveryCost}.00)\n`;
 
-  // Agregar comentario personalizado solo si el usuario escribió algo
+  // Agregar comentario personalizado
   if (customerNoteInput !== "") {
     message += `📝 *Comentario:* ${customerNoteInput}\n`;
   }
 
-  // Agregar stickers si la promoción aplica
+  // Agregar stickers si aplica
   if (currentCategory.stickers > 0) {
     message += `🎁 *Incluye:* 2 Stickers sorpresa\n`;
   }
 
-  message += `\n*Total a pagar:* Q${currentCategory.price}.00\n\n` +
+  message += `\n💵 *Total a pagar:* Q${totalAPagar}.00\n\n` +
              `¡Quedo a la espera de confirmación! ✨`;
 
-  // 🔹 AQUÍ ES DONDE AGREGAS EL NÚMERO (Reemplaza los ceros por tu número real con 502 adelante)
-  const encodedUrl = `https://wa.me/50244936428?text=${encodeURIComponent(message)}`;
+  const encodedUrl = `https://api.whatsapp.com/send?phone=50244936428&text=${encodeURIComponent(message)}`;
   window.open(encodedUrl, '_blank');
 }

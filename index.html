@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,14 @@
   <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Estilos Externos -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="tailwind-config/tailwind-config.js"></script>
@@ -28,23 +31,28 @@
   <!-- Header / Navbar con logo expandido en altura -->
   <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-pancake-100 shadow-sm">
     <div class="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between">
-      
+
       <!-- Bloque de Logo y Textos -->
       <div class="flex items-center gap-4">
         <!-- Contenedor del logo grande que abarca todo el alto del navbar -->
-        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-xl shadow-pancake-500/30 border-4 border-white bg-white flex-shrink-0 flex items-center justify-center -my-3 z-10">
-          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo" style="width: 100%; height: 100%; object-fit: cover; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        <div
+          class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-xl shadow-pancake-500/30 border-4 border-white bg-white flex-shrink-0 flex items-center justify-center -my-3 z-10">
+          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo"
+            style="width: 100%; height: 100%; object-fit: cover; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
         </div>
-        
+
         <!-- Textos organizados verticalmente -->
         <div class="flex flex-col justify-center">
-          <h1 class="text-xl md:text-2xl font-extrabold text-chocolate-800 leading-tight tracking-tight">Dulce Momento</h1>
-          <p class="text-xs md:text-sm font-semibold text-pancake-600 leading-none mt-1.5">¡Recién hechos con amor! 🥞✨</p>
+          <h1 class="text-xl md:text-2xl font-extrabold text-chocolate-800 leading-tight tracking-tight">Dulce Momento
+          </h1>
+          <p class="text-xs md:text-sm font-semibold text-pancake-600 leading-none mt-1.5">¡Recién hechos con amor! 🥞✨
+          </p>
         </div>
       </div>
 
       <!-- Botón de acción -->
-      <button onclick="scrollToBuilder()" class="bg-berry-500 hover:bg-berry-600 text-white font-bold text-xs md:text-sm px-5 py-3 rounded-full shadow-lg shadow-berry-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2 animate-pulse hover:animate-none">
+      <button onclick="scrollToBuilder()"
+        class="bg-berry-500 hover:bg-berry-600 text-white font-bold text-xs md:text-sm px-5 py-3 rounded-full shadow-lg shadow-berry-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2 animate-pulse hover:animate-none">
         <i data-lucide="shopping-bag" class="w-4 h-4"></i>
         <span class="hidden md:inline">Armar Pedido</span>
         <span class="md:hidden">Pedir</span>
@@ -56,9 +64,11 @@
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-12 w-full">
 
     <!-- Hero Banner -->
-    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-pancake-500 via-pancake-400 to-amber-400 p-6 md:p-10 text-white shadow-xl shadow-pancake-500/20">
+    <section
+      class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-pancake-500 via-pancake-400 to-amber-400 p-6 md:p-10 text-white shadow-xl shadow-pancake-500/20">
       <div class="relative z-10 max-w-xl space-y-3">
-        <span class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-white">
+        <span
+          class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-white">
           Menú Oficial & Precios
         </span>
         <h2 class="text-3xl md:text-5xl font-bold leading-tight">
@@ -71,7 +81,7 @@
       <!-- Decorative background elements -->
       <div class="absolute -right-8 -bottom-10 opacity-20 pointer-events-none">
         <svg width="280" height="280" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="10" />
         </svg>
       </div>
     </section>
@@ -83,7 +93,8 @@
           <h2 class="text-2xl md:text-3xl font-bold text-chocolate-800">Categorías de Menú</h2>
           <p class="text-gray-600 text-sm">Selecciona la opción que mejor se adapte a tu antojo</p>
         </div>
-        <span class="text-xs font-semibold text-pancake-700 bg-pancake-100 px-3 py-1.5 rounded-full border border-pancake-200 self-start md:self-auto">
+        <span
+          class="text-xs font-semibold text-pancake-700 bg-pancake-100 px-3 py-1.5 rounded-full border border-pancake-200 self-start md:self-auto">
           Moneda: Quetzales (Q)
         </span>
       </div>
@@ -91,11 +102,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: Individual -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+        <div
+          class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
           <div class="space-y-4 pt-3">
             <!-- Cabecera centrada -->
             <div class="flex flex-col items-center justify-center text-center space-y-1">
-              <span class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
                 Personal
               </span>
               <div class="pt-1">
@@ -113,7 +126,8 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">12</span>
+                <span
+                  class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">12</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -131,24 +145,28 @@
             </ul>
           </div>
 
-          <button onclick="selectCategory('Individual', 20, 12, 1, 1, 1, 0)" class="mt-6 w-full py-2.5 px-4 bg-pancake-50 hover:bg-pancake-500 hover:text-white text-pancake-700 font-semibold rounded-2xl transition-colors border border-pancake-200 flex items-center justify-center gap-2">
+          <button onclick="selectCategory('Individual', 20, 12, 1, 1, 1, 0)"
+            class="mt-6 w-full py-2.5 px-4 bg-pancake-50 hover:bg-pancake-500 hover:text-white text-pancake-700 font-semibold rounded-2xl transition-colors border border-pancake-200 flex items-center justify-center gap-2">
             <span>Pedir Individual</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
 
-       <!-- Card 2: Especial (Destacado) -->
-        <div class="bg-gradient-to-b from-white to-pancake-50/50 rounded-3xl p-6 border-2 border-pancake-400 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
-          
+        <!-- Card 2: Especial (Destacado) -->
+        <div
+          class="bg-gradient-to-b from-white to-pancake-50/50 rounded-3xl p-6 border-2 border-pancake-400 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+
           <!-- Badge superior con espacio garantizado arriba -->
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-pancake-500 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1 z-20 whitespace-nowrap">
+          <div
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-pancake-500 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-md flex items-center gap-1 z-20 whitespace-nowrap">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> ¡MÁS POPULAR!
           </div>
 
           <div class="space-y-4 pt-3">
             <!-- Cabecera reorganizada: Centrada (Recomendado arriba, Precio abajo) -->
             <div class="flex flex-col items-center justify-center text-center space-y-1">
-              <span class="text-xs font-bold uppercase tracking-wider text-pancake-700 bg-pancake-100 px-3 py-1 rounded-full border border-pancake-300">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-pancake-700 bg-pancake-100 px-3 py-1 rounded-full border border-pancake-300">
                 Recomendado
               </span>
               <div class="pt-1">
@@ -166,7 +184,8 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-semibold text-chocolate-800">
-                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-pancake-500 text-white flex items-center justify-center text-xs font-bold">15</span>
+                <span
+                  class="w-6 h-6 flex-shrink-0 rounded-full bg-pancake-500 text-white flex items-center justify-center text-xs font-bold">15</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-700">
@@ -184,17 +203,20 @@
             </ul>
           </div>
 
-          <button onclick="selectCategory('Especial', 25, 15, 2, 2, 1, 0)" class="mt-6 w-full py-2.5 px-4 bg-pancake-500 hover:bg-pancake-600 text-white font-semibold rounded-2xl transition-all shadow-md shadow-pancake-500/20 flex items-center justify-center gap-2">
+          <button onclick="selectCategory('Especial', 25, 15, 2, 2, 1, 0)"
+            class="mt-6 w-full py-2.5 px-4 bg-pancake-500 hover:bg-pancake-600 text-white font-semibold rounded-2xl transition-all shadow-md shadow-pancake-500/20 flex items-center justify-center gap-2">
             <span>Pedir Especial</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
 
         <!-- Card 3: Grande -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+        <div
+          class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
           <div class="space-y-4 pt-3">
             <div class="flex flex-col items-center justify-center text-center space-y-1">
-              <span class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-pancake-600 bg-pancake-50 px-3 py-1 rounded-full border border-pancake-200">
                 Para Compartir
               </span>
               <div class="pt-1">
@@ -212,7 +234,8 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">17</span>
+                <span
+                  class="w-6 h-6 flex-shrink-0 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">17</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -230,17 +253,20 @@
             </ul>
           </div>
 
-          <button onclick="selectCategory('Grande', 30, 17, 2, 2, 2, 0)" class="mt-6 w-full py-2.5 px-4 bg-pancake-50 hover:bg-pancake-500 hover:text-white text-pancake-700 font-semibold rounded-2xl transition-colors border border-pancake-200 flex items-center justify-center gap-2">
+          <button onclick="selectCategory('Grande', 30, 17, 2, 2, 2, 0)"
+            class="mt-6 w-full py-2.5 px-4 bg-pancake-50 hover:bg-pancake-500 hover:text-white text-pancake-700 font-semibold rounded-2xl transition-colors border border-pancake-200 flex items-center justify-center gap-2">
             <span>Pedir Grande</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
 
         <!-- Card 4: Personalizado / Dúo -->
-        <div class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
+        <div
+          class="bg-white rounded-3xl p-6 border border-pancake-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between relative group mt-6">
           <div class="space-y-4 pt-3">
             <div class="flex flex-col items-center justify-center text-center space-y-1">
-              <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
                 Dúo VIP
               </span>
               <div class="pt-1">
@@ -258,7 +284,8 @@
 
             <ul class="space-y-2.5 text-sm">
               <li class="flex items-center gap-2.5 font-medium text-gray-700">
-                <span class="w-6 h-6 flex-shrink-0 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">20</span>
+                <span
+                  class="w-6 h-6 flex-shrink-0 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">20</span>
                 Mini pancakes
               </li>
               <li class="flex items-center gap-2.5 text-gray-600">
@@ -280,7 +307,8 @@
             </ul>
           </div>
 
-          <button onclick="selectCategory('Personalizado / Dúo', 45, 20, 3, 3, 2, 2)" class="mt-6 w-full py-2.5 px-4 bg-purple-50 hover:bg-purple-600 hover:text-white text-purple-700 font-semibold rounded-2xl transition-colors border border-purple-200 flex items-center justify-center gap-2">
+          <button onclick="selectCategory('Personalizado / Dúo', 45, 20, 3, 3, 2, 2)"
+            class="mt-6 w-full py-2.5 px-4 bg-purple-50 hover:bg-purple-600 hover:text-white text-purple-700 font-semibold rounded-2xl transition-colors border border-purple-200 flex items-center justify-center gap-2">
             <span>Pedir Dúo</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -294,7 +322,8 @@
       <div class="max-w-3xl mx-auto space-y-6">
 
         <div class="text-center space-y-2">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pancake-100 text-pancake-700 text-xs font-bold uppercase">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pancake-100 text-pancake-700 text-xs font-bold uppercase">
             <i data-lucide="wand2" class="w-3.5 h-3.5"></i> Diseña tu pedido
           </span>
           <h2 class="text-3xl font-bold text-chocolate-800">Arma Tu Pedido de Mini Pancakes</h2>
@@ -305,22 +334,27 @@
         <div class="space-y-3">
           <label class="block text-sm font-bold text-chocolate-800">1. Selecciona el tamaño:</label>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <button type="button" onclick="selectCategory('Individual', 20, 12, 1, 1, 1, 0)" id="cat-btn-Individual" class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
+            <button type="button" onclick="selectCategory('Individual', 20, 12, 1, 1, 1, 0)" id="cat-btn-Individual"
+              class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
               <div class="text-xs text-gray-500">12 Mini Pancakes</div>
               <div class="font-bold text-sm text-chocolate-800">Individual</div>
               <div class="text-xs font-semibold text-pancake-600 mt-1">Q20.00</div>
             </button>
-            <button type="button" onclick="selectCategory('Especial', 25, 15, 2, 2, 1, 0)" id="cat-btn-Especial" class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
+            <button type="button" onclick="selectCategory('Especial', 25, 15, 2, 2, 1, 0)" id="cat-btn-Especial"
+              class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
               <div class="text-xs text-gray-500">15 Mini Pancakes</div>
               <div class="font-bold text-sm text-chocolate-800">Especial</div>
               <div class="text-xs font-semibold text-pancake-600 mt-1">Q25.00</div>
             </button>
-            <button type="button" onclick="selectCategory('Grande', 30, 17, 2, 2, 2, 0)" id="cat-btn-Grande" class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
+            <button type="button" onclick="selectCategory('Grande', 30, 17, 2, 2, 2, 0)" id="cat-btn-Grande"
+              class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
               <div class="text-xs text-gray-500">17 Mini Pancakes</div>
               <div class="font-bold text-sm text-chocolate-800">Grande</div>
               <div class="text-xs font-semibold text-pancake-600 mt-1">Q30.00</div>
             </button>
-            <button type="button" onclick="selectCategory('Personalizado / Dúo', 45, 20, 3, 3, 2, 2)" id="cat-btn-Personalizado / Dúo" class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
+            <button type="button" onclick="selectCategory('Personalizado / Dúo', 45, 20, 3, 3, 2, 2)"
+              id="cat-btn-Personalizado / Dúo"
+              class="cat-select-btn p-3 rounded-2xl border text-center transition-all bg-white hover:border-pancake-400">
               <div class="text-xs text-gray-500">20 Mini Pancakes</div>
               <div class="font-bold text-sm text-chocolate-800">Dúo / Pers.</div>
               <div class="text-xs font-semibold text-pancake-600 mt-1">Q45.00</div>
@@ -337,7 +371,8 @@
                 <i data-lucide="apple" class="w-4 h-4 text-berry-500"></i>
                 2. Elige tus Frutas:
               </label>
-              <span id="fruit-count-badge" class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
+              <span id="fruit-count-badge"
+                class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
                 0 / 1 elegidas
               </span>
             </div>
@@ -353,7 +388,8 @@
                 <i data-lucide="cookie" class="w-4 h-4 text-pancake-600"></i>
                 3. Elige tus Toppings:
               </label>
-              <span id="topping-count-badge" class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
+              <span id="topping-count-badge"
+                class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
                 0 / 1 elegidos
               </span>
             </div>
@@ -369,12 +405,34 @@
                 <i data-lucide="droplet" class="w-4 h-4 text-amber-600"></i>
                 4. Elige tus Salsas:
               </label>
-              <span id="sauce-count-badge" class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
+              <span id="sauce-count-badge"
+                class="text-xs font-semibold bg-pancake-100 text-pancake-700 px-2.5 py-0.5 rounded-full">
                 0 / 1 elegidas
               </span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="sauces-grid">
               <!-- Sauce options generated via JS -->
+            </div>
+          </div>
+
+          <!-- Campo Entrega -->
+          <div class="space-y-1.5 md:col-span-2 pt-2">
+            <label for="delivery-zone" class="block text-xs font-semibold text-gray-700">Método de Entrega / Zona
+              *</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i data-lucide="map-pin" class="w-4 h-4 text-gray-400"></i>
+              </div>
+              <select id="delivery-zone" onchange="updateSummary()"
+                class="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pancake-400 focus:border-pancake-400 transition-shadow appearance-none cursor-pointer">
+                <option value="0|Pasar a Recoger">Pasar a Recoger (Gratis)</option>
+                <option value="5|San Miguel Panán">San Miguel Panán (Q5.00)</option>
+                <option value="0|Veracruz">Veracruz (Gratis)</option>
+                <option value="0|Perú">Canton Perú (Gratis)</option>
+                <option value="5|San Rafael Bujillá">San Rafael Bujillá (Q5.00)</option>
+                <option value="5|San Antonio Suchitepéquez">San Antonio Suchitepéquez (Q5.00)</option>
+                <option value="10|Mazatenango">Mazatenango (Q10.00)</option>
+              </select>
             </div>
           </div>
 
@@ -384,7 +442,7 @@
               <i data-lucide="user-circle" class="w-4 h-4 text-pancake-600"></i>
               5. Detalles de tu Pedido:
             </h3>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Campo Nombre -->
               <div class="space-y-1.5">
@@ -393,52 +451,66 @@
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
                   </div>
-                  <input type="text" id="customer-name" placeholder="Ej. Carlos Pérez" 
+                  <input type="text" id="customer-name" placeholder="Ej. Carlos Pérez"
                     class="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pancake-400 focus:border-pancake-400 transition-shadow">
                 </div>
               </div>
 
               <!-- Campo Instrucciones -->
               <div class="space-y-1.5">
-                <label for="customer-note" class="block text-xs font-semibold text-gray-700">Comentario o Instrucción (Opcional)</label>
+                <label for="customer-note" class="block text-xs font-semibold text-gray-700">Comentario o Instrucción
+                  (Opcional)</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <i data-lucide="message-square" class="w-4 h-4 text-gray-400"></i>
                   </div>
-                  <input type="text" id="customer-note" placeholder="Ej. Sin tanta miel, o pagaré con billete de Q50" 
+                  <input type="text" id="customer-note" placeholder="Ej. Sin tanta miel, o pagaré con billete de Q50"
                     class="w-full pl-9 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pancake-400 focus:border-pancake-400 transition-shadow">
                 </div>
               </div>
             </div>
           </div>
-          <!-- Order Summary Box -->
-          <div class="bg-pancake-50/80 rounded-2xl p-5 border border-pancake-200 space-y-4">
-            <h4 class="font-bold text-chocolate-800 text-base flex items-center gap-2">
+          <!-- Resumen del Pedido Dinámico -->
+          <div class="bg-pancake-50/80 rounded-3xl p-6 border border-pancake-200 space-y-4 shadow-sm mt-6">
+            <h4 class="font-bold text-chocolate-800 text-lg flex items-center gap-2 border-b border-pancake-200 pb-2 font-display">
               <i data-lucide="receipt" class="w-5 h-5 text-pancake-600"></i>
               Resumen de tu Pedido
             </h4>
 
             <div class="space-y-2 text-sm text-chocolate-800">
-              <div class="flex justify-between font-semibold">
+              <div class="flex justify-between font-bold text-base">
                 <span id="summary-category">Categoría: Individual</span>
-                <span id="summary-price" class="text-pancake-700 font-bold">Q20.00</span>
+                <span id="summary-price" class="text-pancake-700 font-display">Q20.00</span>
               </div>
-              <p class="text-xs text-gray-600" id="summary-details">
-                Incluye 12 mini pancakes
-              </p>
+              <p class="text-xs text-gray-500 pb-2 border-b border-pancake-200/60" id="summary-details">Incluye 12 mini pancakes</p>
               
-              <div class="pt-2 border-t border-pancake-200/60 space-y-1 text-xs">
-                <div><strong>Frutas:</strong> <span id="summary-fruits" class="text-gray-600">Sin seleccionar</span></div>
-                <div><strong>Toppings:</strong> <span id="summary-toppings" class="text-gray-600">Sin seleccionar</span></div>
-                <div><strong>Salsas:</strong> <span id="summary-sauces" class="text-gray-600">Sin seleccionar</span></div>
-                <div id="summary-stickers-row" class="hidden text-purple-700 font-semibold">
+              <div class="pt-2 space-y-1.5 text-xs">
+                <div><strong>Frutas:</strong> <span id="summary-fruits" class="text-gray-600">Ninguna</span></div>
+                <div><strong>Toppings:</strong> <span id="summary-toppings" class="text-gray-600">Ninguno</span></div>
+                <div><strong>Salsas:</strong> <span id="summary-sauces" class="text-gray-600">Ninguna</span></div>
+                
+                <!-- Desglose de Envío -->
+                <div class="flex justify-between pt-1 text-chocolate-800 border-t border-pancake-200/40 mt-2 pt-2">
+                  <span><strong>Entrega:</strong> <span id="summary-delivery-name" class="text-gray-600">Pasar a Recoger</span></span>
+                  <strong id="summary-delivery-cost" class="text-pancake-700">Q0.00</strong>
+                </div>
+
+                <div id="summary-stickers-row" class="hidden text-purple-700 font-semibold pt-1">
                   🎁 Incluye 2 stickers sorpresa gratis
                 </div>
               </div>
             </div>
 
-            <button onclick="sendOrderWhatsApp()" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <!-- Total Final con Envío Sumado -->
+            <div class="flex justify-between font-bold text-lg text-chocolate-800 pt-3 border-t-2 border-pancake-200">
+              <span>Total a Pagar:</span>
+              <span id="summary-total" class="text-pancake-700 font-display text-xl">Q20.00</span>
+            </div>
+          </div>
+
+            <button onclick="sendOrderWhatsApp()"
+              class="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 mt-4 text-base">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
               <span>Enviar Pedido por WhatsApp</span>
             </button>
           </div>
@@ -452,7 +524,8 @@
     <section class="bg-amber-500/10 rounded-3xl p-6 md:p-8 border border-pancake-200 text-center space-y-4">
       <h3 class="text-xl font-bold text-chocolate-800">¿Tienes dudas sobre los ingredientes disponibles?</h3>
       <p class="text-xs md:text-sm text-gray-700 max-w-xl mx-auto">
-        Contamos con ingredientes frescos del día: Fresas, Banano, Uva, Melocoton, Chispas de Colores, Oreo, Chocolate Hersheys, Dulce de Leche, Miel, Botonetas y mucho más.
+        Contamos con ingredientes frescos del día: Fresas, Banano, Uva, Melocoton, Chispas de Colores, Oreo, Chocolate
+        Hersheys, Dulce de Leche, Miel, Botonetas y mucho más.
       </p>
     </section>
 
@@ -461,12 +534,15 @@
   <!-- Footer -->
   <!-- Footer -->
   <footer class="bg-chocolate-800 text-pancake-100 py-8 px-4 mt-12">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+    <div
+      class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
       <div class="flex items-center gap-3">
-        
+
         <!-- Logo en el Footer -->
-        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-pancake-400 bg-white flex-shrink-0 flex items-center justify-center shadow-md">
-          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo" style="width: 100%; height: 100%; object-fit: cover;">
+        <div
+          class="w-12 h-12 rounded-full overflow-hidden border-2 border-pancake-400 bg-white flex-shrink-0 flex items-center justify-center shadow-md">
+          <img src="imagenes/Dulce_momento2.svg" alt="Dulce Momento Logo"
+            style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
         <div>
@@ -474,14 +550,15 @@
           <p class="text-xs text-pancake-300">Guatemala • Tu Dulce Momento</p>
         </div>
       </div>
-      
+
       <p class="text-xs text-pancake-300">
         © 2026 Dulce Momento. Todos los derechos reservados.
       </p>
     </div>
   </footer>
   <!-- Notification Toast -->
-  <div id="toast" class="fixed bottom-4 right-4 bg-chocolate-800 text-white text-xs px-4 py-3 rounded-xl shadow-2xl transition-all transform translate-y-20 opacity-0 z-50 flex items-center gap-2">
+  <div id="toast"
+    class="fixed bottom-4 right-4 bg-chocolate-800 text-white text-xs px-4 py-3 rounded-xl shadow-2xl transition-all transform translate-y-20 opacity-0 z-50 flex items-center gap-2">
     <i data-lucide="info" class="w-4 h-4 text-pancake-400"></i>
     <span id="toast-message">Mensaje de prueba</span>
   </div>
@@ -489,4 +566,5 @@
   <!-- Lógica Externa -->
   <script src="js/app.js"></script>
 </body>
+
 </html>
